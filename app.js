@@ -16,7 +16,7 @@ const deliveryAgentRouter = require("./routes/deliveryAgent.router");
 dotenv.config();
 
 // * Initialise firebase to the application
-const serviceAccount = require("./util/gst-comman-firebase-adminsdk-sd6mj-6419a2bb6f.json");
+const serviceAccount = require("./util/liquor-app-8fd43-firebase-adminsdk-7qthr-6f68121584.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),

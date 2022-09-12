@@ -16,11 +16,11 @@ const deliveryAgentRouter = require("./routes/deliveryAgent.router");
 dotenv.config();
 
 // * Initialise firebase to the application
-//const serviceAccount = require("./util/online-liquor-shop-11356-firebase-adminsdk-jse0g-1f3a99710d.json");
+const serviceAccount = require("./util/gst-comman-firebase-adminsdk-sd6mj-6419a2bb6f.json");
 
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount),
-// });
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
 
 // * Normalize a port into a number, string, or false.
 function normalizePort(val) {

@@ -7,32 +7,12 @@ const deliveryAgentRouterController = require('../controllers/deliveryAgent.rout
 
 const deliveryAgentRouter = express.Router(); // initialize express router
 
-deliveryAgentRouter
-  .get(
-    '/request-phone-otp-register',
-    deliveryAgentRouterController.requestPhoneOTPForRegister
-  )
-  .post('/register', deliveryAgentRouterController.register)
-  .get(
-    '/request-phone-otp-login',
-    deliveryAgentRouterController.requestPhoneOTPForLogin
-  )
-  .get('/login', deliveryAgentRouterController.login)
-  .get(
-    '/logout',
-    authenticate.verifyUserToken,
-    deliveryAgentRouterController.logout
-  )
-  .get(
-    '/get-deliveryAgent',
-    authenticate.verifyUserToken,
-    deliveryAgentRouterController.getDeliveryAgentController
-  )
-  .put(
-    '/update-deliveryAgent',
-    authenticate.verifyUserToken,
-    fileUpload.upload.single('file'),
-    deliveryAgentRouterController.updateDeliveryAgentController
-  );
+deliveryAgentRouter.get('/request-phone-otp-register', deliveryAgentRouterController.requestPhoneOTPForRegister)
+deliveryAgentRouter.post('/register', deliveryAgentRouterController.register)
+deliveryAgentRouter.get('/request-phone-otp-login', deliveryAgentRouterController.requestPhoneOTPForLogin)
+deliveryAgentRouter.get('/login', deliveryAgentRouterController.login)
+deliveryAgentRouter.get('/logout', authenticate.verifyUserToken,deliveryAgentRouterController.logout)
+deliveryAgentRouter.get('/get-deliveryAgent', authenticate.verifyUserToken,deliveryAgentRouterController.getDeliveryAgentController)
+deliveryAgentRouter.put('/update-deliveryAgent', authenticate.verifyUserToken,fileUpload.upload.single('file'),deliveryAgentRouterController.updateDeliveryAgentController);
 
 module.exports = deliveryAgentRouter;
